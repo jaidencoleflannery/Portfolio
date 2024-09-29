@@ -1,0 +1,173 @@
+/* CSS Variables */
+:root {
+    --primary-color: #fdfdfd; /* Soft yellow */
+    --secondary-color: #f7feff; /* Soft blue */
+    --text-color: #282828;
+    --bg-color: #fff;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.menu-button {
+    position: relative;
+}
+
+.menu-button button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-button .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-color);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.menu-button .dropdown-menu.active {
+    display: block;
+}
+
+.menu-button .dropdown-menu li a {
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.menu-button .dropdown-menu li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.profile-icon {
+    margin-left: auto;
+}
+
+.profile-icon img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* Title Header */
+.title-header {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+}
+
+.title-header h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.title-header p {
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+/* Bento Box */
+.bento-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.grid-item {
+    background-color: var(--bg-color);
+    border: 1px solid #eaeaea;
+    padding: 1rem;
+    text-align: center;
+    transition: transform var(--transition-speed);
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-color);
+    border-top: 1px solid #eaeaea;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0.5rem 1rem;
+    }
+
+    .menu-button button {
+        font-size: 20px;
+    }
+
+    .title-header h2 {
+        font-size: 2rem;
+    }
+
+    .title-header p {
+        font-size: 1rem;
+    }
+}
