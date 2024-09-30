@@ -24,6 +24,17 @@ a {
     color: inherit;
 }
 
+main {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-color);
+    height: 80vh;
+    width:100vw;
+    padding: 0em;
+    margin: 0em;
+}
+
 .navbar {
     background-color: var(--bg-color);
     border-bottom: 1px solid #eaeaea;
@@ -91,6 +102,7 @@ a {
 .logo h1 {
     margin: 0;
     font-size: 1.5rem;
+    font-weight: bolder;
     color: var(--text-color);
 }
 
@@ -104,6 +116,10 @@ a {
     height: 20em;
     overflow: hidden;
     border-radius: 4em;
+    animation-name: float;
+    animation-duration: 600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 #about-icon > img {
@@ -126,7 +142,7 @@ a {
 /* Title Header */
 .title-header {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     padding: 4rem 1rem;
     background-image: linear-gradient(to bottom, #ff000000, var(--primary-color));
@@ -160,15 +176,14 @@ a {
 
 .title-tile {
     display: inline-block;
-    height: 4em;
-    width: 4em;
+    height: 3.5em;
+    width: 3.5em;
     border: 0.1em solid #e6e6e6;
     background-color: #ffffff00;
     margin: 0em;
     padding: 0em;
 }
 
-/* Bento Box */
 .bento-box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -191,13 +206,14 @@ a {
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-/* Footer */
 .footer {
+    position: relative;
+    z-index: 1;
     background-color: var(--bg-color);
     border-top: 1px solid #eaeaea;
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 1em;
+    margin: 0em;
 }
 
 @media (max-width: 768px) {
@@ -217,3 +233,22 @@ a {
         font-size: 1rem;
     }
 }
+
+
+    @keyframes float {
+
+        from {
+            transform: rotate(0deg) translate3d(0em, 0, 0) rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            transform:rotate(0deg);
+        }
+        
+        to {
+            transform: rotate(90deg) translate3d(1em, 0, 0) rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform:rotate(90deg);
+        }
+
+    }
