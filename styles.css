@@ -1,10 +1,10 @@
 /* CSS Variables */
 :root {
     --primary-color: #fdfdfd; /* Soft yellow */
-    --secondary-color: #f7feff; /* Soft blue */
+    --secondary-color: #f4f4f4; /* Soft blue */
     --text-color: #282828;
     --bg-color: #fff;
-    --font-family: 'Helvetica Neue', Arial, sans-serif;
+    --font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     --transition-speed: 0.3s;
 }
 
@@ -98,6 +98,25 @@ a {
     margin-left: auto;
 }
 
+#about-icon {
+    margin: auto;
+    width: 20em;
+    height: 20em;
+    overflow: hidden;
+    border-radius: 4em;
+}
+
+#about-icon > img {
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .profile-icon img {
     width: 32px;
     height: 32px;
@@ -106,9 +125,11 @@ a {
 
 /* Title Header */
 .title-header {
+    position: relative;
+    z-index: 1;
     text-align: center;
     padding: 4rem 1rem;
-    background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    background-image: linear-gradient(to bottom, #ff000000, var(--primary-color));
     color: var(--text-color);
 }
 
@@ -120,6 +141,31 @@ a {
 .title-header p {
     font-size: 1.25rem;
     margin-top: 0;
+}
+
+#title-grid {
+    position: fixed;
+    top: 0;
+    width: 120vw;
+    height: 100vh;
+    overflow:hidden;
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0em;
+    padding: 0em;
+    block-size: fit-content;
+    background-color: #ffffff00;
+}
+
+.title-tile {
+    display: inline-block;
+    height: 4em;
+    width: 4em;
+    border: 0.1em solid #e6e6e6;
+    background-color: #ffffff00;
+    margin: 0em;
+    padding: 0em;
 }
 
 /* Bento Box */
