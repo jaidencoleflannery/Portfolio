@@ -3,6 +3,7 @@
     --primary-color: #fdfdfd; /* Soft yellow */
     --secondary-color: #f4f4f4; /* Soft blue */
     --text-color: #282828;
+    --subtext-color: #484848;
     --bg-color: #fff;
     --font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     --transition-speed: 0.3s;
@@ -10,6 +11,7 @@
 
 * {
     box-sizing: border-box;
+    cursor:pointer;
 }
 
 body {
@@ -26,11 +28,14 @@ a {
 
 main {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: top;
     position: relative;
     z-index: 1;
     background-color: var(--bg-color);
-    height: 80vh;
-    width:100vw;
+    height: 80em;
+    width:100%;
     padding: 0em;
     margin: 0em;
 }
@@ -99,7 +104,7 @@ main {
     transform: translateX(-50%);
 }
 
-.logo h1 {
+.logo a {
     margin: 0;
     font-size: 1.5rem;
     font-weight: bolder;
@@ -117,7 +122,7 @@ main {
     overflow: hidden;
     border-radius: 4em;
     animation-name: float;
-    animation-duration: 600s;
+    animation-duration: 200s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -184,21 +189,41 @@ main {
     padding: 0em;
 }
 
+#projects-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
+    font-size: 6em;
+    font-weight: bolder;
+    color: var(--subtext-color);
+}
+
 .bento-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: top;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0em;
+    padding: 1em;
+    background-color: var(--bg-color);
 }
 
 .grid-item {
+    height: 20em;
+    width: 20em;
     background-color: var(--bg-color);
     border: 1px solid #eaeaea;
-    padding: 1rem;
+    border-radius: 1.6em;
     text-align: center;
     transition: transform var(--transition-speed);
+    margin: 0.6em;
+    padding: 0.6em;
 }
 
 .grid-item:hover {
@@ -245,10 +270,10 @@ main {
         }
         
         to {
-            transform: rotate(90deg) translate3d(1em, 0, 0) rotate(90deg);
-            -moz-transform: rotate(90deg);
-            -webkit-transform: rotate(90deg);
-            transform:rotate(90deg);
+            transform: rotate(30deg) translate3d(1em, 0, 0) rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -webkit-transform: rotate(30deg);
+            transform:rotate(30deg);
         }
 
     }
