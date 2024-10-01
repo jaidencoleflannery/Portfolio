@@ -1,8 +1,14 @@
 const menuToggle = document.getElementById('menu-toggle');
 const dropdownMenu = document.querySelector('.menu-button .dropdown-menu');
+const profileToggle = document.getElementById('profile-toggle');
+const profileMenu = document.querySelector('.profile-button .dropdown-profile');
 
 menuToggle.addEventListener('click', () => {
     dropdownMenu.classList.toggle('active');
+});
+
+profileToggle.addEventListener('click', () => {
+    profileMenu.classList.toggle('active');
 });
 
 const screenWidth = window.screen.width;
