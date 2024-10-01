@@ -30,6 +30,8 @@ a {
 }
 
 main {
+    min-height: calc(100vh - 8em);
+    padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: top;
@@ -37,9 +39,8 @@ main {
     position: relative;
     z-index: 1;
     background-color: var(--bg-color);
-    height: 80em;
+    height: 100%;
     width:100%;
-    padding: 0em;
     margin: 0em;
 }
 
@@ -52,6 +53,9 @@ main {
 }
 
 .navbar-container {
+    position: sticky;
+    min-height: 4em;
+    max-height: 4em;
     display: flex;
     align-items: center;
     position: relative;
@@ -172,6 +176,7 @@ main {
     flex-wrap: wrap;
     margin: 0em;
     padding: 0em;
+    padding-top: 3.5em;
     block-size: fit-content;
     background-color: #ffffff00;
 }
@@ -241,27 +246,31 @@ main {
 }
 
 .footer {
+    position: sticky;
+    bottom: 0;
+    min-height: 4em;
+    max-height: 4em;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    margin-top: 0;
     z-index: 1;
     background-color: var(--bg-color);
     border-top: 1px solid #eaeaea;
     text-align: center;
-    padding: 1em;
     margin: 0em;
+    padding: 1rem;
 }
 
 .footer > a {
-    padding-left: 4em;
-    padding-right: 4em;
+    padding-left: 2.8em;
+    padding-right: 2.8em;
 }
 
 #footer-name {
     position: absolute;
     top: 1.4em;
-    right: 2em;
+    right: 4em;
     left: auto;
 }
 
@@ -276,20 +285,20 @@ main {
 }
 
 
-    @keyframes float {
+@keyframes float {
 
-        from {
-            transform: rotate(0deg) translate3d(0em, 0, 0) rotate(0deg);
-            -moz-transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            transform:rotate(0deg);
-        }
-        
-        to {
-            transform: rotate(30deg) translate3d(1em, 0, 0) rotate(30deg);
-            -moz-transform: rotate(30deg);
-            -webkit-transform: rotate(30deg);
-            transform:rotate(30deg);
-        }
-
+    from {
+        transform: rotate(0deg) translate3d(0em, 0, 0) rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform:rotate(0deg);
     }
+    
+    to {
+        transform: rotate(30deg) translate3d(1em, 0, 0) rotate(30deg);
+        -moz-transform: rotate(30deg);
+        -webkit-transform: rotate(30deg);
+        transform:rotate(30deg);
+    }
+
+}
