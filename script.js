@@ -15,18 +15,24 @@ for(let height = 0; height < screenHeight; height += 60){
     }
 }
 
-const homeRedirect = document.getElementById('home-redirect');
-const aboutRedirect = document.getElementById('about-redirect');
-const contactRedirect = document.getElementById('contact-redirect');
+const homeRedirect = document.getElementsByClassName('home-redirect');
+const aboutRedirect = document.getElementsByClassName('about-redirect');
+const contactRedirect = document.getElementsByClassName('contact-redirect');
 
-homeRedirect.addEventListener('click', () => {
-    window.location.replace('file:///Users/coleflannery/Documents/Webdev/Projects/Portfolio/index.html');
-});
+for(let count = 0; count < homeRedirect.length; count++){
+    homeRedirect[count].addEventListener('click', () => {
+        window.location.replace('file:///Users/coleflannery/Documents/Webdev/Projects/Portfolio/index.html');
+    });
+}
 
-aboutRedirect.addEventListener('click', () => {
-    window.location.replace('file:///Users/coleflannery/Documents/Webdev/Projects/Portfolio/about.html');
-});
+for(let count = 0; count < aboutRedirect.length; count++){
+    aboutRedirect[count].addEventListener('click', () => {
+        window.location.replace('file:///Users/coleflannery/Documents/Webdev/Projects/Portfolio/about.html');
+    });
+}
 
-contactRedirect.addEventListener('click', () => {
-    window.location.replace('file:///Users/coleflannery/Documents/Webdev/Projects/Portfolio/contact.html');
-});
+for(let count = 0; count < contactRedirect.length; count++){
+    contactRedirect[count].addEventListener('click', () => {
+        window.location.replace('file:///Users/coleflannery/Documents/Webdev/Projects/Portfolio/contact.html');
+    });
+}

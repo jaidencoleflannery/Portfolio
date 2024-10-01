@@ -7,6 +7,8 @@
     --bg-color: #fff;
     --font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     --transition-speed: 0.3s;
+    --text-size: 2.2em;
+    --subtext-size: 1.4em;
 }
 
 * {
@@ -19,6 +21,7 @@ body {
     font-family: var(--font-family);
     color: var(--text-color);
     background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
 a {
@@ -29,8 +32,8 @@ a {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: top;
+    justify-content: top;
+    align-items: center;
     position: relative;
     z-index: 1;
     background-color: var(--bg-color);
@@ -102,12 +105,8 @@ main {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.logo a {
     margin: 0;
-    font-size: 1.5rem;
-    font-weight: bolder;
+    font-size: var(--subtext-size);
     color: var(--text-color);
 }
 
@@ -143,8 +142,6 @@ main {
     height: 32px;
     border-radius: 50%;
 }
-
-/* Title Header */
 .title-header {
     position: relative;
     z-index: 2;
@@ -156,11 +153,11 @@ main {
 
 .title-header h2 {
     margin-bottom: 1rem;
-    font-size: 2.5rem;
+    font-size: var(--text-size);
 }
 
 .title-header p {
-    font-size: 1.25rem;
+    font-size: var(--subtext-size);
     margin-top: 0;
 }
 
@@ -189,16 +186,28 @@ main {
     padding: 0em;
 }
 
-#projects-title {
+.section-title {
     display: flex;
     flex-wrap: wrap;
     align-items: top;
     justify-content: center;
-    margin-top: 1em;
-    margin-bottom: 0.6em;
+    margin: 0.6em;
     font-size: 6em;
     font-weight: bolder;
     color: var(--subtext-color);
+}
+
+.text-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: top;
+    text-align:center;
+    width: 40em;
+    margin: 2em;
+    font-size: var(--subtext-size);
+    font-weight: lighter;
+    color: var(--text-color);
 }
 
 .bento-box {
@@ -206,7 +215,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: top;
-    justify-content: center;
+    justify-content: top;
     height: 100%;
     width: 100%;
     margin: 0em;
@@ -232,6 +241,9 @@ main {
 }
 
 .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 1;
     background-color: var(--bg-color);
@@ -241,6 +253,18 @@ main {
     margin: 0em;
 }
 
+.footer > a {
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+#footer-name {
+    position: absolute;
+    top: 1.4em;
+    right: 2em;
+    left: auto;
+}
+
 @media (max-width: 768px) {
     .navbar-container {
         padding: 0.5rem 1rem;
@@ -248,14 +272,6 @@ main {
 
     .menu-button button {
         font-size: 20px;
-    }
-
-    .title-header h2 {
-        font-size: 2rem;
-    }
-
-    .title-header p {
-        font-size: 1rem;
     }
 }
 
