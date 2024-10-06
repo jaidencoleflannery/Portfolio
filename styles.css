@@ -48,6 +48,13 @@ main {
     flex-basis: 50%;
 }
 
+.partition {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    justify-content: center;
+}
+
 .sub-main {
     display: flex;
     flex-direction: column;
@@ -327,6 +334,14 @@ main {
     align-items: center;
     text-align: left;
     padding: 2em;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
 }
 
 .bento-box {
