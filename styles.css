@@ -45,6 +45,7 @@ main {
     height: 100%;
     width:100%;
     margin: 0em;
+    flex-basis: 50%;
 }
 
 .sub-main {
@@ -286,12 +287,20 @@ main {
     padding: 0em;
 }
 
+.section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
 .section-title {
     display: flex;
     flex-wrap: wrap;
     align-items: top;
     justify-content: center;
-    margin: 0;
+    margin: 1em;
+    margin-top: 2em;
     padding: 0;
     font-size: 4em;
     font-weight: bolder;
@@ -309,6 +318,15 @@ main {
     font-size: var(--subtext-size);
     font-weight: lighter;
     color: var(--text-color);
+}
+
+.section-text {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 2em;
 }
 
 .bento-box {
