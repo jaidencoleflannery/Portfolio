@@ -52,7 +52,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 50%;
-    justify-content: center;
 }
 
 .sub-main {
@@ -64,13 +63,15 @@ main {
     position: relative;
     z-index: 1;
     background-color: var(--bg-color);
-    min-height: 30em;
-    max-height: 30em;
-    min-width: 30em;
-    max-width: 30em;
+    min-height: 40em;
+    max-height: 40em;
+    min-width: 40em;
+    max-width: 40em;
     padding: 0.2em;
     padding-bottom: 1em;
     margin: 4em;
+    margin-right: 8em;
+    margin-left: 8em;
     border-radius: 4em;
     overflow: hidden;
     background: rgb(241,241,241);
@@ -102,9 +103,11 @@ main {
 }
 
 .menu-button {
+    display: flex;
     position: relative;
     display: flex;
     width: 33%;
+    justify-content: left;
 }
 
 .menu-button button {
@@ -120,7 +123,6 @@ main {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
     background-color: var(--bg-color);
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     list-style: none;
@@ -131,7 +133,11 @@ main {
 }
 
 .menu-button .dropdown-menu.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border-radius: 1em;
+    margin-top: 1.2em;
 }
 
 .menu-button .dropdown-menu li a {
@@ -149,7 +155,7 @@ main {
     display: flex;
     width: 33%;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
 }
 
 .profile-button button {
@@ -165,7 +171,6 @@ main {
     display: none;
     position: absolute;
     top: 100%;
-    right: 0;
     background-color: var(--bg-color);
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     list-style: none;
@@ -176,7 +181,15 @@ main {
 }
 
 .profile-button .dropdown-profile.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    margin-top: 0.2em;
+    max-width: 1em;
+}
+
+ul.dopdown-profile.active {
+    max-width: 1px;
 }
 
 .profile-button .dropdown-profile li a {
@@ -201,6 +214,14 @@ main {
 #profile-toggle {
     margin-left: auto;
     right: 0;
+}
+
+.navlink {
+    max-width: 1em;
+}
+
+.navlink-container {
+    max-width: 1em;
 }
 
 .logo {
@@ -336,12 +357,18 @@ main {
     padding: 2em;
 }
 
+.section-text > span {
+    max-width: 400px;
+}
+
 .left {
     text-align: left;
+    justify-content: left;
 }
 
 .right {
     text-align: right;
+    justify-content: right;
 }
 
 .bento-box {
@@ -358,15 +385,15 @@ main {
 }
 
 .grid-item {
-    height: 12em;
-    width: 12em;
+    height: 17.6em;
+    width: 17.6em;
     background-color: var(--bg-color);
     border: 1px solid #eaeaea;
     text-align: center;
     transition: transform var(--transition-speed);
     margin: 0.6em;
     padding: 0.6em;
-    border-radius: 3.4em;
+    border-radius: 2.4em;
 }
 
 .grid-item:hover {

@@ -47,8 +47,8 @@ const subMain = document.getElementsByClassName('sub-main');
 
 for(let count = 0; count < subMain.length; count++){
     container = subMain[count].value;
-    random = Math.floor(Math.random() * 10);
-    if(random > 5){
+    random = Math.floor(Math.random() * 5);
+    if(random > 0.5){
         random = random * -1;
     }
     subMain[count].style.transform = 'rotate(' + random + 'deg)';
