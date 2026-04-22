@@ -1,6 +1,6 @@
 :root {
   --font-family: "Bytesized", sans-serif;
-  --font-weight: 100;
+  --font-weight: 400;
   --text-size: 1.2rem;
   --font-style: normal;
   --fg-color: #343a40;
@@ -11,8 +11,8 @@
 }
 
 @font-face {
-  font-family: "BerkeleyMono";
-  src: url("./resources/BerkeleyMono-Regular.otf");
+  font-family: "Ingram Mono";
+  src: url("./resources/ingram-mono-regular.woff2");
 }
 
 *,*::before,*::after {
@@ -20,7 +20,7 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-  font-family: "BerkeleyMono";
+  font-family: "Ingram Mono";
 }
 
 html {
@@ -29,7 +29,12 @@ html {
 }
 
 main {
-  min-width: 36rem !important;
+  max-width: 82rem !important;
+  min-width: 62rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -39,6 +44,7 @@ body {
   align-items: center;
   font:var(--text-size) var(--font-family);
   font-weight:var(--font-weight);
+  line-height: 1.6em;
   color:var(--fg-color);
   background:var(--bg-color);
   background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 40%, rgba(220, 220, 220, 0.2) 100%);
