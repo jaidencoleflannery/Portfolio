@@ -1,7 +1,7 @@
 :root {
-  --font-family: "Bytesized", sans-serif;
+  --font-family: "Ingram Mono";
   --font-weight: 400;
-  --text-size: 1.2rem;
+  --text-size: 1rem;
   --font-style: normal;
   --fg-color: #343a40;
   --bg-color: #ffffff;
@@ -29,8 +29,8 @@ html {
 }
 
 main {
-  max-width: 82rem !important;
-  min-width: 62rem !important;
+  max-width: 56rem !important;
+  min-width: 56rem !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
