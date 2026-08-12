@@ -1,30 +1,23 @@
+let pixelRatio = window.devicePixelRatio;
+
 // mouse position.
 let xPosition = 0;
 let yPosition = 0;
 
-// approximate position mappings.
-let xCenter = window.innerWidth / 2;
-let yCenter = window.innerHeight / 2;
+let pageWidth;
+let pageHeight;
 
-// preallocated memory for efficiency.
-let isNearby = false;
+const cellSize = 14;
+const fontSize = 22;
 
-const pageWidth = window.innerWidth;
-const pageHeight = window.innerHeight;
+let cellWidth;
+let cellHeight;
+let numColumns;
+let numRows;
 
 let gridElements = [];
-for(let x = 0; x < pageWidth; x++) {
-    gridElements[x] = new Array(pageHeight);
-    for(let y = 0; y < pageHeight; y++) {
-        gridElements[x][y] = (x < (pageWidth / 2))
-            ? [xCenter - x * 100]
-            : 
-    }
-}
 
-// Math.
-distanceThreshold = 400;
-
+// init
 if(document.readyState === `loading`)
     document.addEventListener(`DOMContentLoaded`, onLoad);
 else
@@ -33,12 +26,8 @@ else
 function onLoad() {
     // grid for content.
     const grid = document.getElementById(`grid`);
-    const gridContext = grid.getContext(`2d`);
-    gridContext.fillStyle = `black`;
+    const gridContext = grid.getContext(`2d`);   
 
-    initGrid(gridContext);
-
-    // mouse.
     document.addEventListener("mousemove", (event) => {
         // page tracks mouse against entire page, don't use client or screen. 
         xPosition = event.pageX;
@@ -47,49 +36,48 @@ function onLoad() {
 
     // compute at an interval for performance :|
     setInterval(() => {
-        resizeCanvas(grid); 
+        resizeCanvas(grid, gridContext);
         refreshGrid(gridContext, xPosition, yPosition);
-    }, 40);
+    }, 120);
 }
 
-function initGrid (gridContext) {
-    gridElements.forEach(([x, y]) => {
-        //gridContext.fillRect(x, y, 10, 10);
-    });
+function resizeCanvas(grid, gridContext) {
+    if(pageWidth === window.innerWidth
+    && pageHeight === window.innerHeight)
+        return;
+
+    pageWidth = window.innerWidth;
+    pageHeight = window.innerHeight;
+    pixelRatio = window.devicePixelRatio;
+    numColumns = Math.ceil(pageWidth / cellSize);
+    numRows = Math.ceil(pageHeight / cellSize); 
+
+    grid.style.width = `${pageWidth}px`;
+    grid.style.height = `${pageHeight}px`;
+    grid.width = pageWidth * pixelRatio;
+    grid.height = pageHeight * pixelRatio; 
+    gridContext.fillStyle = `darkgray`; 
+    gridContext.font = `400 ${fontSize}px Bytesized, monospace`;
+
+    gridContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    gridContext.clearRect(0, 0, grid.width, grid.height);
 }
 
-function resizeCanvas(grid) { 
-    grid.width = window.innerWidth;
-    grid.height = window.innerHeight;
-}
-
-function refreshGrid(gridContext, xCursor, yCursor) {
-    gridElements.forEach(([x, y]) => {
-        isNearby = (true
-            /*(Math.abs(Math.abs(x) - Math.abs(xCursor)) < distanceThreshold)
-            && (Math.abs(Math.abs(y) - Math.abs(y)) < distanceThreshold)
-            */
-        );
- 
-        const xSign = (x > 0) ? 1 : -1;
-        const ySign = (y > 0) ? 1 : -1;
-        const xDistance = Math.abs(Math.abs(x) - Math.abs(xCursor));
-        const yDistance = Math.abs(Math.abs(y) - Math.abs(yCursor));
-
-        if(isNearby) {
-            x = xCenter + 0.2 * (xDistance * xSign);
-            y = yCenter + 0.2 * (yDistance * ySign);
+function refreshGrid(gridContext) {
+    gridContext.clearRect(0, 0, grid.width, grid.height);
+    // init cells.
+    for(let row = 0; row < numRows; row++) {
+        gridElements[row] = new Array(numColumns);
+        for(let column = 0; column < numColumns; column++) {
+            const x = column * cellSize;
+            const y = row * cellSize;
+            gridContext.fillText(getRandomChar(), x, y);
         }
-
-        /* 
-        console.log(`x dist: ${Math.abs(Math.abs(position.x) - Math.abs(x))} y dist: ${Math.abs(Math.abs(position.y) - Math.abs(y))}`);
-        console.log(`isNearby: ${isNearby}`);
-        console.log(`original x: ${x}`);
-        console.log(`mutated x: ${xCenter + (xDistance * xSign)}`);
-        console.log(`calc: ${xCenter} + (${xDistance} * ${xSign})\n\n`);  
-        */
-
-        gridContext.fillRect(x, y, 10, 10);
-    });
+    }
 }
 
+function getRandomChar() {
+    const minimum = 0;
+    const maximum = 128;
+    return String.fromCharCode(Math.floor(Math.random() * (maximum - minimum) + minimum));
+}

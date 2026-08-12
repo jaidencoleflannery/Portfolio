@@ -1,33 +1,28 @@
 :root {
-  --font-family:    "Ingram Mono";
+  --font-family:    "Bytesized";
   --font-weight:    400;
   --text-size:      1rem;
   --font-style:     normal;
 
   --code-fg-color:  blue;
-  --code-bg-color:  #ffffff;
+  --code-bg-color:  #fff;
 
   --fg-color:       #343a40;
-  --bg-color:       #ffffff;
+  --bg-color:       #fff;
 
   --border-color:   #eeeeee; 
 }
 
-@font-face {
-  font-family:  "Ingram Mono";
-  src:          url("./resources/ingram-mono-regular.woff2");
-}
-
 *,*::before,*::after {
-  box-sizing:           border-box;
-  -webkit-user-select:  none; /* safari */
-  -ms-user-select:      none; /* ie 10 + ie 11 */
-  user-select:          none; /* standard syntax */
-  font-family:          "Ingram Mono";
-  padding:              0;
-  margin:               0;
-  max-width:            100vw;
-  max-height:           100vh;
+    box-sizing:             border-box;
+    -webkit-user-select:    none; /* safari */
+    -ms-user-select:        none; /* ie 10 + ie 11 */
+    user-select:            none; /* standard syntax */
+    font-family:            var(--font-family);
+    padding:                0;
+    margin:                 0;
+    max-width:              100vw;
+    max-height:             100vh;
 }
 
 html {
@@ -44,12 +39,13 @@ body {
     display:            flex;
     justify-content:    center;
     align-items:        center;
-    font:               var(--text-size) var(--font-family);
-    font-weight:        var(--font-weight);
+    font-family:        "Bytesized", sans-serif;
+    font-weight:        400;
+    font-style:         normal;
     line-height:        1.6em;
     color:              var(--fg-color);
-    background:         radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 40%, rgba(200, 200, 200, 0.2) 100%);
-    transition:         background var(--speed),color var(--speed);
+    background:         radial-gradient(circle, white 0%, whitesmoke 100%);
+    transition:         background var(--speed), color var(--speed);
     overflow:           auto;
     overflow-wrap:      break-word;
     word-wrap:          break-word;
@@ -89,9 +85,12 @@ a::after.no-anim {
 }
 
 .grid-canvas {
-    background: red;
-    padding:    0;
-    margin:     0;
+    font-family:    "Bytesized", sans-serif;
+    font-weight:    400;
+    font-style:     normal;
+    opacity:        80%;
+    padding:        0;
+    margin:         0;
 }
 
 .blogpost {
