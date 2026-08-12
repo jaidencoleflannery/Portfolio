@@ -3,11 +3,14 @@
   --font-weight: 400;
   --text-size: 1rem;
   --font-style: normal;
+
   --fg-color: #343a40;
   --bg-color: #ffffff;
-  --code-fg-color: blue;
-  --code-bg-color: #ffffff;
+
   --border-color: #eeeeee;
+
+  --code-fg-color: blue;
+  --code-bg-color: #ffffff; 
 }
 
 @font-face {
